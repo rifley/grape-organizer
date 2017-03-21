@@ -39,6 +39,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/boring", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/boring.vtl");
+      model.put("grapes", request.session().attribute("grapes"));
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
+    get("/grapeplains", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/grapeplains.vtl");
+      model.put("grapes", request.session().attribute("grapes"));
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }

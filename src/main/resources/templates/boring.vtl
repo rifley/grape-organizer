@@ -1,0 +1,22 @@
+#if ($grapes)
+  <h3>All about that grape</h3>
+  #foreach ($grape in $grapes)
+    <ul>
+      <li>$grape.getFlavor()</li>
+      <li>$grape.getSize()</li>
+      <li>$grape.getSoftness()</li>
+      <li>$grape.getColor()</li>
+      <li>$grape.getOrigin()</li>
+    </ul>
+    <p>
+      ----------------------
+    </p>
+  #end
+  <p>Add another <a href="/">grape</a>!</p>
+  <p>Story Time <a href="/grapeplains">story</a>!</p>
+#else
+  <p>
+    This is so boring!
+  </p>
+  <p>Add another <a href="/">grape</a>!</p>
+#end
